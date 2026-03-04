@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HAIKOR - Beauté Premium</title>
+
+<style>
+
+:root{
+--green:#0f3b2e;
+--gold:#d4af37;
+--bg:#f6f6f6;
+}
+
+body{
+margin:0;
+font-family:Arial;
+background:var(--bg);
+text-align:center;
+}
+
+/* ===== HEADER ===== */
+header{
+background:var(--green);
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+height:60px;
+}
+
+.brand{
+color:var(--gold);
+font-size:22px;
+font-weight:bold;
+}
+
+/* ===== HERO ===== */
+.hero{
+padding:40px 20px;
+}
+
+.hero h1{
+color:var(--green);
+}
+
+.tagline{
+font-size:18px;
+color:#555;
+}
+
+/* ===== PRODUITS ===== */
+.product{
+background:white;
+margin:40px auto;
+padding:25px;
+width:360px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.product img{
+width:230px;
+height:230px;
+object-fit:cover;
+border-radius:10px;
+}
+
+button{
+background:var(--green);
+color:white;
+border:none;
+padding:10px 15px;
+margin:5px;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.buy{
+background:var(--gold);
+color:black;
+font-size:16px;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+footer{
+margin-top:60px;
+padding:20px;
+background:var(--green);
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="brand">HAIKOR</div>
+<img src="logo.png" class="logo">
+</header>
+
+<div class="hero">
+<h1>Révélez l’éclat naturel de votre peau ✨</h1>
+<p class="tagline">
+Les essentiels beauté premium utilisés chaque jour pour une peau fraîche et lumineuse.
+</p>
+</div>
+
+<!-- ========= BROSSE ========= -->
+<div class="product">
+
+<h2>Brosse Nettoyante Visage</h2>
+
+<img id="brosseImage" src="brosse_bleu.jpg">
+
+<br><br>
+
+<button onclick="changeBrosse('brosse_bleu.jpg','https://buy.stripe.com/fZubIT4Xf4qzeqV0Fgdby08')">Bleu</button>
+
+<button onclick="changeBrosse('brosse_rose.jpg','https://buy.stripe.com/14A9ALahz1en96B73Edby07')">Rose</button>
+
+<br><br>
+
+<a id="brosseBuy" href="https://buy.stripe.com/fZubIT4Xf4qzeqV0Fgdby08">
+<button class="buy">Acheter maintenant - 19,99€</button>
+</a>
+
+</div>
+
+
+<!-- ========= ICE ROLLER ========= -->
+<div class="product">
+
+<h2>Ice Roller</h2>
+
+<img id="rollerImage" src="roller_bleu.jpg">
+
+<br><br>
+
+<button onclick="changeRoller('roller_bleu.jpg','https://buy.stripe.com/8x228j4Xf4qz3MhbjUdby05')">Bleu</button>
+<button onclick="changeRoller('roller_noir.jpg','https://buy.stripe.com/8x2cMX4Xf3mv3MhafQdby04')">Noir</button>
+<button onclick="changeRoller('roller_vert.jpg','https://buy.stripe.com/9B69ALahz1en1E99bMdby03')">Vert</button>
+<button onclick="changeRoller('roller_rose.jpg','https://buy.stripe.com/8x27sDgFX4qz82xfAadby01')">Rose</button>
+<button onclick="changeRoller('roller_beige.jpg','https://buy.stripe.com/8x28wH75ncX5dmR9bMdby00')">Beige</button>
+
+<br><br>
+
+<a id="rollerBuy" href="https://buy.stripe.com/8x228j4Xf4qz3MhbjUdby05">
+<button class="buy">Acheter maintenant - 17,50€</button>
+</a>
+
+</div>
+
+<footer>
+© 2026 HAIKOR — Beauté & Bien-être
+</footer>
+
+<script>
+
+function changeBrosse(image,link){
+document.getElementById("brosseImage").src=image;
+document.getElementById("brosseBuy").href=link;
+}
+
+function changeRoller(image,link){
+document.getElementById("rollerImage").src=image;
+document.getElementById("rollerBuy").href=link;
+}
+
+</script>
+
+</body>
+</html>
 
