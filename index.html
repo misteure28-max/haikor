@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="UTF-8">
-<title>HAIKOR - Beauté & Bien-être</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HAIKOR - Beauté Premium</title>
 
 <style>
 
+:root{
+--green:#0f3b2e;
+--gold:#d4af37;
+--bg:#f6f6f6;
+}
+
 body{
-font-family: Arial;
 margin:0;
-background:#f5f5f5;
+font-family:Arial;
+background:var(--bg);
 text-align:center;
 }
 
+/* ===== HEADER ===== */
 header{
-background:#0e3b2e;
-color:#d4af37;
-padding:20px;
+background:var(--green);
+padding:15px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -27,87 +34,69 @@ align-items:center;
 height:60px;
 }
 
-h1{
-margin:0;
+.brand{
+color:var(--gold);
+font-size:22px;
+font-weight:bold;
 }
 
+/* ===== HERO ===== */
 .hero{
-padding:50px 20px;
+padding:40px 20px;
 }
 
-.hero h2{
-font-size:32px;
-color:#0e3b2e;
+.hero h1{
+color:var(--green);
 }
 
-.hero p{
-color:#555;
+.tagline{
 font-size:18px;
+color:#555;
 }
 
-.container{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-padding:40px;
-}
-
+/* ===== PRODUITS ===== */
 .product{
 background:white;
-padding:30px;
+margin:40px auto;
+padding:25px;
+width:360px;
 border-radius:12px;
-width:300px;
 box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
 .product img{
-width:220px;
-margin-bottom:20px;
+width:230px;
+height:230px;
+object-fit:cover;
+border-radius:10px;
 }
 
-.color-btn{
-background:#0e3b2e;
+button{
+background:var(--green);
 color:white;
 border:none;
-padding:10px 14px;
+padding:10px 15px;
 margin:5px;
 border-radius:6px;
 cursor:pointer;
+font-weight:bold;
 }
 
 .buy{
-background:#d4af37;
+background:var(--gold);
 color:black;
-padding:14px 20px;
-border-radius:8px;
-display:inline-block;
-margin-top:20px;
-font-weight:bold;
-text-decoration:none;
+font-size:16px;
 }
 
-.trust{
-margin-top:20px;
-font-size:14px;
-}
-
-.reviews{
-background:#0e3b2e;
-color:white;
-padding:40px;
+button:hover{
+transform:scale(1.05);
 }
 
 footer{
-background:#083026;
-color:white;
+margin-top:60px;
 padding:20px;
-}
-
-footer a{
-color:#d4af37;
-margin:10px;
-text-decoration:none;
+background:var(--green);
+color:white;
 }
 
 </style>
@@ -116,169 +105,77 @@ text-decoration:none;
 <body>
 
 <header>
-
-<h1>HAIKOR</h1>
-
+<div class="brand">HAIKOR</div>
 <img src="logo.png" class="logo">
-
 </header>
 
-<section class="hero">
-
-<h2>Révélez l’éclat naturel de votre peau ✨</h2>
-
-<p>
+<div class="hero">
+<h1>Révélez l’éclat naturel de votre peau ✨</h1>
+<p class="tagline">
 Les essentiels beauté premium utilisés chaque jour pour une peau fraîche et lumineuse.
 </p>
+</div>
 
-</section>
-
-<div class="container">
-
-<!-- BROSSE VISAGE -->
-
+<!-- ========= BROSSE ========= -->
 <div class="product">
 
 <h2>Brosse Nettoyante Visage</h2>
 
-<img id="brosseImg" src="images/brosse-bleu.png">
+<img id="brosseImage" src="brosse_bleu.jpg">
 
-<br>
+<br><br>
 
-<button class="color-btn" onclick="brosse('bleu')">Bleu</button>
-<button class="color-btn" onclick="brosse('rose')">Rose</button>
+<button onclick="changeBrosse('brosse_bleu.jpg','https://buy.stripe.com/fZubIT4Xf4qzeqV0Fgdby08')">Bleu</button>
 
-<br>
+<button onclick="changeBrosse('brosse_rose.jpg','https://buy.stripe.com/14A9ALahz1en96B73Edby07')">Rose</button>
 
-<a id="brosseBuy" class="buy" target="_blank">
-Acheter maintenant - 19,99€
+<br><br>
+
+<a id="brosseBuy" href="https://buy.stripe.com/fZubIT4Xf4qzeqV0Fgdby08">
+<button class="buy">Acheter maintenant - 19,99€</button>
 </a>
 
 </div>
 
-<!-- ICE ROLLER -->
 
+<!-- ========= ICE ROLLER ========= -->
 <div class="product">
 
 <h2>Ice Roller</h2>
 
-<img id="iceImg" src="images/ice-beige.png">
+<img id="rollerImage" src="roller_bleu.jpg">
 
-<br>
+<br><br>
 
-<button class="color-btn" onclick="ice('beige')">Beige</button>
-<button class="color-btn" onclick="ice('rose')">Rose</button>
-<button class="color-btn" onclick="ice('violet')">Violet</button>
-<button class="color-btn" onclick="ice('vert')">Vert</button>
-<button class="color-btn" onclick="ice('noir')">Noir</button>
-<button class="color-btn" onclick="ice('bleu')">Bleu</button>
-<button class="color-btn" onclick="ice('marron')">Marron</button>
+<button onclick="changeRoller('roller_bleu.jpg','https://buy.stripe.com/8x228j4Xf4qz3MhbjUdby05')">Bleu</button>
+<button onclick="changeRoller('roller_noir.jpg','https://buy.stripe.com/8x2cMX4Xf3mv3MhafQdby04')">Noir</button>
+<button onclick="changeRoller('roller_vert.jpg','https://buy.stripe.com/9B69ALahz1en1E99bMdby03')">Vert</button>
+<button onclick="changeRoller('roller_rose.jpg','https://buy.stripe.com/8x27sDgFX4qz82xfAadby01')">Rose</button>
+<button onclick="changeRoller('roller_beige.jpg','https://buy.stripe.com/8x28wH75ncX5dmR9bMdby00')">Beige</button>
 
-<br>
+<br><br>
 
-<a id="iceBuy" class="buy" target="_blank">
-Acheter maintenant - 17,50€
+<a id="rollerBuy" href="https://buy.stripe.com/8x228j4Xf4qz3MhbjUdby05">
+<button class="buy">Acheter maintenant - 17,50€</button>
 </a>
 
 </div>
 
-</div>
-
-<div class="trust">
-
-🔒 Paiement sécurisé | 🚚 Livraison suivie | 💰 Garantie 30 jours
-
-</div>
-
-<section class="reviews">
-
-<h3>Avis clients</h3>
-
-⭐ ⭐ ⭐ ⭐ ⭐ Sarah M. : Ma peau est beaucoup plus douce !
-
-<br><br>
-
-⭐ ⭐ ⭐ ⭐ ⭐ Lina K. : Produit incroyable, je recommande.
-
-</section>
-
 <footer>
-
 © 2026 HAIKOR — Beauté & Bien-être
-
-<br><br>
-
-<a href="#">Conditions générales de vente</a> |
-<a href="#">Politique de remboursement</a> |
-<a href="#">Politique de confidentialité</a> |
-<a href="#">Mentions légales</a>
-
 </footer>
-
 
 <script>
 
-function brosse(c){
-
-let img=document.getElementById("brosseImg")
-let buy=document.getElementById("brosseBuy")
-
-if(c==="bleu"){
-img.src="images/brosse-bleu.png"
-buy.href="https://buy.stripe.com/fZubIT4Xf4qzeqV0Fgdby08"
+function changeBrosse(image,link){
+document.getElementById("brosseImage").src=image;
+document.getElementById("brosseBuy").href=link;
 }
 
-if(c==="rose"){
-img.src="images/brosse-rose.png"
-buy.href="https://buy.stripe.com/14A9ALahz1en96B73Edby07"
+function changeRoller(image,link){
+document.getElementById("rollerImage").src=image;
+document.getElementById("rollerBuy").href=link;
 }
-
-}
-
-function ice(c){
-
-let img=document.getElementById("iceImg")
-let buy=document.getElementById("iceBuy")
-
-if(c==="beige"){
-img.src="images/ice-beige.png"
-buy.href="https://buy.stripe.com/8x28wH75ncX5dmR9bMdby00"
-}
-
-if(c==="rose"){
-img.src="images/ice-rose.png"
-buy.href="https://buy.stripe.com/8x27sDgFX4qz82xfAadby01"
-}
-
-if(c==="violet"){
-img.src="images/ice-violet.png"
-buy.href="https://buy.stripe.com/3cIfZ961j4qzeqVew6dby02"
-}
-
-if(c==="vert"){
-img.src="images/ice-vert.png"
-buy.href="https://buy.stripe.com/9B69ALahz1en1E99bMdby03"
-}
-
-if(c==="noir"){
-img.src="images/ice-noir.png"
-buy.href="https://buy.stripe.com/8x2cMX4Xf3mv3MhafQdby04"
-}
-
-if(c==="bleu"){
-img.src="images/ice-bleu.png"
-buy.href="https://buy.stripe.com/8x228j4Xf4qz3MhbjUdby05"
-}
-
-if(c==="marron"){
-img.src="images/ice-marron.png"
-buy.href="https://buy.stripe.com/14AdR13Tbg9h2Id1Jkdby06"
-}
-
-}
-
-brosse("bleu")
-ice("beige")
 
 </script>
 
