@@ -43,3 +43,18 @@ background:#f5f5f5;
 padding:30px;
 margin-top:40px;
 }
+
+.reviews{
+background:#0f3d2e;
+padding:20px;
+margin-top:30px;
+text-align:left;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+border-radius:10px;
+}
+
+.reviews p{
+margin-bottom:15px;
+}
